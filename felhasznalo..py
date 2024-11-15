@@ -11,7 +11,7 @@ elotte.pack(padx=10, pady=10)
 
 
 konyv_cimek = [konyv["cim"] for konyv in konyvek_adatok]
-combo_box = ttk.Combobox(root, values=konyv_cimek)
+combo_box = ttk.Combobox(root, values=konyv_cimek,state="readonly")
 combo_box.pack(padx=10, pady=10)
 
 
@@ -34,6 +34,8 @@ def konyv_info():
 adat_button = tk.Button(root, text="A könyv adatai", command=konyv_info)
 adat_button.pack(padx=10, pady=10)
 
+
+#Ezt majd elmenteni txt-be és majd egy másik gombbal a txt-t lelehessen kérni hogy megjelenítse a lekért könyveket és a lekért könyveket ki is lehessen törölni
 kolcsonzes_button = tk.Button(root,text="Kikölcsönzés",command=konyv_info)
 kolcsonzes_button.pack(padx=10,pady=10)
 
