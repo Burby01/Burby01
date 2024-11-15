@@ -1,4 +1,4 @@
-books = [
+konyvek_adatok = [
     {"cim": "1984", "szerzo": "George Orwell", "megjelenes": 1949, "kiado": "Secker & Warburg", "oldalszam": 328, "isbn": "978-0451524935"},
     {"cim": "A kis herceg", "szerzo": "Antoine de Saint-Exupéry", "megjelenes": 1943, "kiado": "Reynal & Hitchcock", "oldalszam": 96, "isbn": "978-0156012195"},
     {"cim": "A Mester és Margarita", "szerzo": "Mihail Bulgakov", "megjelenes": 1967, "kiado": "Azbuka", "oldalszam": 384, "isbn": "978-0141184524"},
