@@ -2,7 +2,6 @@ import tkinter as tk
 from tkinter import ttk
 from konyveklista import konyvek_adatok
 
-
 root = tk.Tk()
 root.title("Könyv Lista")
 root.geometry("500x500")
