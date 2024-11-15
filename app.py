@@ -11,20 +11,20 @@ root.geometry("1000x600")
 root.minsize(width=600, height=500)
 root.configure(bg="#964B00")
 
-felhasznalo_label = tk.Label(root, text="Felhasználónév", bg="grey", fg="lime")
+felhasznalo_label = tk.Label(root, text="Felhasználónév", bg="grey", fg="yellow")
 felhasznalo_label.place(relx=0.5, rely=0.053, anchor=N)
-felhasznalo = Entry(root, width=50, bg="grey", fg="lime", borderwidth=8)
+felhasznalo = Entry(root, width=50, bg="grey", fg="yellow", borderwidth=8)
 felhasznalo.insert(0, "")
 felhasznalo.place(relx=0.5,rely=0.1,anchor=N)
 
-jelszo_label = tk.Label(root, text="Jelszó", bg="grey", fg="lime")
+jelszo_label = tk.Label(root, text="Jelszó", bg="grey", fg="yellow")
 jelszo_label.place(relx=0.5,rely=0.20,  anchor=N)
-jelszo= Entry(root, width=50, bg="grey",fg="lime", borderwidth=8,show="*")
+jelszo= Entry(root, width=50, bg="grey",fg="yellow", borderwidth=8,show="*")
 jelszo.insert(0, "")
 jelszo.place(relx=0.5,rely=0.25,anchor=N)
 
-siker_label = Label(root, text="", bg="green", fg="lime")
-nemsiker_label = Label(root, text="", bg="red", fg="lime")
+siker_label = Label(root, text="", bg="green", fg="yellow")
+nemsiker_label = Label(root, text="", bg="red", fg="yellow")
 
 
 def bejelentkezes():
@@ -46,9 +46,9 @@ def bejelentkezes():
          nemsiker_label.place(relx=0.5, rely=0.35, anchor=N)
 
 
-belepes = Button(root, text="Bejelentkezés", padx=10, pady=10, command=bejelentkezes, fg="lime", bg="grey")
+belepes = Button(root, text="Bejelentkezés", padx=10, pady=10, command=bejelentkezes, fg="yellow", bg="grey")
 belepes.place(relx=0.5, rely=0.44, anchor=N)
-kilépés = Button(root, text="Kilépés",padx=10,pady=10,fg="lime",bg="red" ,command=root.destroy)
+kilépés = Button(root, text="Kilépés",padx=10,pady=10,fg="yellow",bg="red" ,command=root.destroy)
 kilépés.place(relx=0.5,rely=0.6, anchor=N)
 
 
