@@ -15,13 +15,13 @@ root.configure(bg="#9A7E6F")
 
 felhasznalo_label = tk.Label(root, text="Felhasználónév", bg="#B59F81", fg="yellow")
 felhasznalo_label.place(relx=0.5, rely=0.053, anchor=N)
-felhasznalo = Entry(root, width=50, bg="#B59F81", fg="yellow", borderwidth=8)
+felhasznalo = Entry(root, width=50, bg="#B59F81", fg="#2A3663", borderwidth=8)
 felhasznalo.insert(0, "")
 felhasznalo.place(relx=0.5,rely=0.1,anchor=N)
 
 jelszo_label = tk.Label(root, text="Jelszó", bg="#B59F81", fg="yellow")
 jelszo_label.place(relx=0.5,rely=0.20,  anchor=N)
-jelszo= Entry(root, width=50, bg="#B59F81",fg="yellow", borderwidth=8,show="*")
+jelszo= Entry(root, width=50, bg="#B59F81",fg="#2A3663", borderwidth=8,show="*")
 jelszo.insert(0, "")
 jelszo.place(relx=0.5,rely=0.25,anchor=N)
 
