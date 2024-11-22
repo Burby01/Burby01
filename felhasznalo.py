@@ -90,4 +90,7 @@ def fel():
     valaszt_label = tk.Label(root, text="Még nem választott ki könyvet , kérem válasszon ki.", justify=tk.LEFT, bg="grey", fg="#8B0000")
     valaszt_label.pack(padx=10, pady=10)
 
+    kilépés = tk.Button(root, text="Kilépés",padx=10,pady=10,fg="yellow",bg="red" ,command=root.destroy)
+    kilépés.place(relx=0.5,rely=0.6, anchor=N)
+
     root.mainloop()
