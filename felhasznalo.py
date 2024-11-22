@@ -2,90 +2,92 @@ import tkinter as tk
 from tkinter import ttk
 from konyveklista import konyvek_adatok
 
-root = tk.Tk()
-root.title("Könyv Lista")
-root.geometry("500x500")
-root.configure(bg="#964B00")
+def fel():
 
-elotte = tk.Label(root, text="Válassza ki a könyvet:", bg="grey", fg="yellow")
-elotte.pack(padx=10, pady=10)
+    root = tk.Tk()
+    root.title("Könyv Lista")
+    root.geometry("500x500")
+    root.configure(bg="#964B00")
 
-konyv_cimek = [konyv["cim"] for konyv in konyvek_adatok]
-combo_box = ttk.Combobox(root, values=konyv_cimek, state="readonly")
-combo_box.pack(padx=10, pady=10)
+    elotte = tk.Label(root, text="Válassza ki a könyvet:", bg="grey", fg="yellow")
+    elotte.pack(padx=10, pady=10)
 
-def konyv_info():
-    kivalasztott_cim = combo_box.get()
-    kivalasztott_konyv = next((konyv for konyv in konyvek_adatok if konyv["cim"] == kivalasztott_cim), None)
+    konyv_cimek = [konyv["cim"] for konyv in konyvek_adatok]
+    combo_box = ttk.Combobox(root, values=konyv_cimek, state="readonly")
+    combo_box.pack(padx=10, pady=10)
 
-    if kivalasztott_konyv:
-        valaszt_text = f"Cím: {kivalasztott_konyv['cim']}\n"
-        valaszt_text += f"Szerző: {kivalasztott_konyv['szerzo']}\n"
-        valaszt_text += f"Kiadás éve: {kivalasztott_konyv['megjelenes']}\n"
-        valaszt_text += f"Kiadó: {kivalasztott_konyv['kiado']}\n"
-        valaszt_text += f"Oldalszám: {kivalasztott_konyv['oldalszam']}\n"
-        valaszt_text += f"ISBN: {kivalasztott_konyv['isbn']}"
-    else:
-        valaszt_text = "Nincs könyv kiválasztva."
+    def konyv_info():
+        kivalasztott_cim = combo_box.get()
+        kivalasztott_konyv = next((konyv for konyv in konyvek_adatok if konyv["cim"] == kivalasztott_cim), None)
 
-    valaszt_label.config(text=valaszt_text)
-
-def kolcsonzes():
-    kivalasztott_cim = combo_box.get()
-    kivalasztott_konyv = next((konyv for konyv in konyvek_adatok if konyv["cim"] == kivalasztott_cim), None)
-    
-    if kivalasztott_konyv:
-        with open("kikolcsonzott_konyvek.txt", "r") as file:
-            kikolcsonzott = file.readlines()
-
-        if f"{kivalasztott_konyv['cim']}\n" in kikolcsonzott:
-            valaszt_label.config(text=f"A(z) {kivalasztott_konyv['cim']} könyvet már kikölcsönözték.")
+        if kivalasztott_konyv:
+            valaszt_text = f"Cím: {kivalasztott_konyv['cim']}\n"
+            valaszt_text += f"Szerző: {kivalasztott_konyv['szerzo']}\n"
+            valaszt_text += f"Kiadás éve: {kivalasztott_konyv['megjelenes']}\n"
+            valaszt_text += f"Kiadó: {kivalasztott_konyv['kiado']}\n"
+            valaszt_text += f"Oldalszám: {kivalasztott_konyv['oldalszam']}\n"
+            valaszt_text += f"ISBN: {kivalasztott_konyv['isbn']}"
         else:
-            with open("kikolcsonzott_konyvek.txt", "a") as file:
-                file.write(f"{kivalasztott_konyv['cim']}\n")
-            valaszt_label.config(text=f"A(z) {kivalasztott_konyv['cim']} könyvet sikeresen kikölcsönözted!")
-    else:
-        valaszt_label.config(text="Nincs könyv kiválasztva.")
+            valaszt_text = "Nincs könyv kiválasztva."
 
-def kolcsonzes_lekerese():
-    kivalasztott_cim = combo_box.get()
-    kivalasztott_konyv = next((konyv for konyv in konyvek_adatok if konyv["cim"] == kivalasztott_cim), None)
-    if kivalasztott_konyv:
-        with open("kikolcsonzott_konyvek.txt", "r") as file:
-            kikolcsonzott = file.readlines()
-        lekert_konyvek = "".join(kikolcsonzott)
-        valaszt_label.config(text=f"Kikölcsönzött könyvek:\n{lekert_konyvek}")
-    else:
-        valaszt_label.config(text="Még nincs kikölcsönzött könyv.")
+        valaszt_label.config(text=valaszt_text)
 
-def torles():
-    kivalasztott_cim = combo_box.get()
-    kivalasztott_konyv = next((konyv for konyv in konyvek_adatok if konyv["cim"] == kivalasztott_cim), None)
+    def kolcsonzes():
+        kivalasztott_cim = combo_box.get()
+        kivalasztott_konyv = next((konyv for konyv in konyvek_adatok if konyv["cim"] == kivalasztott_cim), None)
+        
+        if kivalasztott_konyv:
+            with open("kikolcsonzott_konyvek.txt", "r") as file:
+                kikolcsonzott = file.readlines()
 
-    if kivalasztott_konyv:
-        with open("kikolcsonzott_konyvek.txt", "r") as file:
-            kikolcsonzott = file.readlines()
-        with open("kikolcsonzott_konyvek.txt", "w") as file:
-            for konyv in kikolcsonzott:
-                if konyv.strip() != kivalasztott_cim:
-                    file.write(konyv)
-        valaszt_label.config(text=f"A(z) {kivalasztott_cim} könyv vissza lett adva.")
-    else:
-        valaszt_label.config(text="Még nincs kikölcsönzött könyv.")
+            if f"{kivalasztott_konyv['cim']}\n" in kikolcsonzott:
+                valaszt_label.config(text=f"A(z) {kivalasztott_konyv['cim']} könyvet már kikölcsönözték.")
+            else:
+                with open("kikolcsonzott_konyvek.txt", "a") as file:
+                    file.write(f"{kivalasztott_konyv['cim']}\n")
+                valaszt_label.config(text=f"A(z) {kivalasztott_konyv['cim']} könyvet sikeresen kikölcsönözted!")
+        else:
+            valaszt_label.config(text="Nincs könyv kiválasztva.")
 
-adat_button = tk.Button(root, text="A könyv adatai", command=konyv_info, bg="grey", fg="yellow")
-adat_button.pack(padx=10, pady=10)
+    def kolcsonzes_lekerese():
+        kivalasztott_cim = combo_box.get()
+        kivalasztott_konyv = next((konyv for konyv in konyvek_adatok if konyv["cim"] == kivalasztott_cim), None)
+        if kivalasztott_konyv:
+            with open("kikolcsonzott_konyvek.txt", "r") as file:
+                kikolcsonzott = file.readlines()
+            lekert_konyvek = "".join(kikolcsonzott)
+            valaszt_label.config(text=f"Kikölcsönzött könyvek:\n{lekert_konyvek}")
+        else:
+            valaszt_label.config(text="Még nincs kikölcsönzött könyv.")
 
-kolcsonzes_button = tk.Button(root, text="Kikölcsönzés", command=kolcsonzes, bg="grey", fg="yellow")
-kolcsonzes_button.pack(padx=10, pady=10)
+    def torles():
+        kivalasztott_cim = combo_box.get()
+        kivalasztott_konyv = next((konyv for konyv in konyvek_adatok if konyv["cim"] == kivalasztott_cim), None)
 
-kolcsonzes_lekerese_button = tk.Button(root, text="Kikölcsönzött könyvek", command=kolcsonzes_lekerese, bg="grey", fg="yellow")
-kolcsonzes_lekerese_button.pack(padx=10, pady=10)
+        if kivalasztott_konyv:
+            with open("kikolcsonzott_konyvek.txt", "r") as file:
+                kikolcsonzott = file.readlines()
+            with open("kikolcsonzott_konyvek.txt", "w") as file:
+                for konyv in kikolcsonzott:
+                    if konyv.strip() != kivalasztott_cim:
+                        file.write(konyv)
+            valaszt_label.config(text=f"A(z) {kivalasztott_cim} könyv vissza lett adva.")
+        else:
+            valaszt_label.config(text="Még nincs kikölcsönzött könyv.")
 
-torles_button = tk.Button(root, text="Kikölcsönzött könyv visszaadása", command=torles, bg="grey", fg="yellow")
-torles_button.pack(padx=10, pady=10)
+    adat_button = tk.Button(root, text="A könyv adatai", command=konyv_info, bg="grey", fg="yellow")
+    adat_button.pack(padx=10, pady=10)
 
-valaszt_label = tk.Label(root, text="Még nem választott ki könyvet , kérem válasszon ki.", justify=tk.LEFT, bg="grey", fg="#8B0000")
-valaszt_label.pack(padx=10, pady=10)
+    kolcsonzes_button = tk.Button(root, text="Kikölcsönzés", command=kolcsonzes, bg="grey", fg="yellow")
+    kolcsonzes_button.pack(padx=10, pady=10)
 
-root.mainloop()
+    kolcsonzes_lekerese_button = tk.Button(root, text="Kikölcsönzött könyvek", command=kolcsonzes_lekerese, bg="grey", fg="yellow")
+    kolcsonzes_lekerese_button.pack(padx=10, pady=10)
+
+    torles_button = tk.Button(root, text="Kikölcsönzött könyv visszaadása", command=torles, bg="grey", fg="yellow")
+    torles_button.pack(padx=10, pady=10)
+
+    valaszt_label = tk.Label(root, text="Még nem választott ki könyvet , kérem válasszon ki.", justify=tk.LEFT, bg="grey", fg="#8B0000")
+    valaszt_label.pack(padx=10, pady=10)
+
+    root.mainloop()

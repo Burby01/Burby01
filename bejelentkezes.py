@@ -3,6 +3,8 @@ import tkinter as tk
 from tkinter.ttk import Combobox
 from tkinter import messagebox
 from functools import partial
+from felhasznalo import fel
+from admin import ad
  
 
 root=tk.Tk()
@@ -36,10 +38,12 @@ def bejelentkezes():
     if felnev == "Admin" and jszo == "asd0":
         siker_label.config(text="sikeres bejelentkezés")
         siker_label.place(relx=0.5, rely=0.35, anchor=N)
+        ad
 
     elif felnev == "Felhasznalo" and jszo == "asd123":
         siker_label.config(text="sikeres bejelentkezés")
         siker_label.place(relx=0.5, rely=0.35, anchor=N)
+        fel
         
     else:
          nemsiker_label.config(text="sikertelen bejelentkezés")
