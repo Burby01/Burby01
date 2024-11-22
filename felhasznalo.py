@@ -67,11 +67,15 @@ def fel():
         if kivalasztott_konyv:
             with open("kikolcsonzott_konyvek.txt", "r") as file:
                 kikolcsonzott = file.readlines()
-            with open("kikolcsonzott_konyvek.txt", "w") as file:
-                for konyv in kikolcsonzott:
-                    if konyv.strip() != kivalasztott_cim:
-                        file.write(konyv)
-            valaszt_label.config(text=f"A(z) {kivalasztott_cim} könyv vissza lett adva.")
+
+            if f"{kivalasztott_cim}\n" not in kikolcsonzott:
+                valaszt_label.config(text=f"A(z) {kivalasztott_cim} könyv nincs kikölcsönözve, nem törölhető.")
+            else:
+                with open("kikolcsonzott_konyvek.txt", "w") as file:
+                    for konyv in kikolcsonzott:
+                        if konyv.strip() != kivalasztott_cim:
+                            file.write(konyv)
+                valaszt_label.config(text=f"A(z) {kivalasztott_cim} könyv vissza lett adva.")
         else:
             valaszt_label.config(text="Még nincs kikölcsönzött könyv.")
 
