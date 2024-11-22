@@ -35,7 +35,7 @@ def show_book_info(event):
 combo_box.bind("<<ComboboxSelected>>", show_book_info)
 
 # Információs szöveg megjelenítése
-info_label = tk.Label(root, text="Select a book to see more details.", justify=tk.LEFT)
+info_label = tk.Label(root, text="Válasszon egy könyvet a többi adatért", justify=tk.LEFT)
 info_label.pack(padx=10, pady=10)
 
 # Alkalmazás futtatása
