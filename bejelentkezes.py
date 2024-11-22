@@ -36,17 +36,17 @@ def bejelentkezes():
     felnev = felhasznalo.get()
     print(jszo, felnev)
     if felnev == "Admin" and jszo == "asd0":
-        siker_label.config(text="sikeres bejelentkezés")
+        siker_label.config(text="Sikeres bejelentkezés")
         siker_label.place(relx=0.5, rely=0.35, anchor=N)
         ad()
 
     elif felnev == "Felhasznalo" and jszo == "asd123":
-        siker_label.config(text="sikeres bejelentkezés")
+        siker_label.config(text="Sikeres bejelentkezés")
         siker_label.place(relx=0.5, rely=0.35, anchor=N)
         fel()
         
     else:
-         nemsiker_label.config(text="sikertelen bejelentkezés")
+         nemsiker_label.config(text="Sikertelen bejelentkezés")
          nemsiker_label.place(relx=0.5, rely=0.35, anchor=N)
 
 
