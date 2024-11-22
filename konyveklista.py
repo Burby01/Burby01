@@ -49,4 +49,5 @@ konyvek_adatok = [
     {"cim": "A világ vége", "szerzo": "Cormac McCarthy", "megjelenes": 2006, "kiado": "Alfred A. Knopf", "oldalszam": 287, "isbn": "978-0307387139"},
     {"cim": "A hosszú eső", "szerzo": "Joe Hill", "megjelenes": 2007, "kiado": "St. Martin's Press", "oldalszam": 320, "isbn": "978-0312991216"},
     {"cim": "A vadon szívében", "szerzo": "Jon Krakauer", "megjelenes": 1996, "kiado": "Villard", "oldalszam": 224, "isbn": "978-0385483492"}
+    
 ]
