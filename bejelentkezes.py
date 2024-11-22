@@ -38,12 +38,12 @@ def bejelentkezes():
     if felnev == "Admin" and jszo == "asd0":
         siker_label.config(text="sikeres bejelentkezés")
         siker_label.place(relx=0.5, rely=0.35, anchor=N)
-        ad
+        ad()
 
     elif felnev == "Felhasznalo" and jszo == "asd123":
         siker_label.config(text="sikeres bejelentkezés")
         siker_label.place(relx=0.5, rely=0.35, anchor=N)
-        fel
+        fel()
         
     else:
          nemsiker_label.config(text="sikertelen bejelentkezés")
