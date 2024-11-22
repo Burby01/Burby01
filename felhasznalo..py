@@ -68,7 +68,7 @@ def torles():
             for konyv in kikolcsonzott:
                 if konyv.strip() != kivalasztott_cim:
                     file.write(konyv)
-        valaszt_label.config(text=f"A(z) {kivalasztott_cim} könyv törölve lett.")
+        valaszt_label.config(text=f"A(z) {kivalasztott_cim} könyv vissza lett adva.")
     else:
         valaszt_label.config(text="Még nincs kikölcsönzött könyv.")
 
@@ -81,7 +81,7 @@ kolcsonzes_button.pack(padx=10, pady=10)
 kolcsonzes_lekerese_button = tk.Button(root, text="Kikölcsönzött könyvek", command=kolcsonzes_lekerese)
 kolcsonzes_lekerese_button.pack(padx=10, pady=10)
 
-torles_button = tk.Button(root, text="Kikölcsönzött könyv törlése", command=torles)
+torles_button = tk.Button(root, text="Kikölcsönzött könyv visszaadása", command=torles)
 torles_button.pack(padx=10, pady=10)
 
 valaszt_label = tk.Label(root, text="Még nem választott ki könyvet , kérem válasszon ki.", justify=tk.LEFT)
