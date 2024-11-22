@@ -11,17 +11,17 @@ root=tk.Tk()
 root.title("Könyvár")
 root.geometry("1000x600")
 root.minsize(width=600, height=500)
-root.configure(bg="#964B00")
+root.configure(bg="#9A7E6F")
 
-felhasznalo_label = tk.Label(root, text="Felhasználónév", bg="grey", fg="yellow")
+felhasznalo_label = tk.Label(root, text="Felhasználónév", bg="#B59F81", fg="yellow")
 felhasznalo_label.place(relx=0.5, rely=0.053, anchor=N)
-felhasznalo = Entry(root, width=50, bg="grey", fg="yellow", borderwidth=8)
+felhasznalo = Entry(root, width=50, bg="#B59F81", fg="yellow", borderwidth=8)
 felhasznalo.insert(0, "")
 felhasznalo.place(relx=0.5,rely=0.1,anchor=N)
 
-jelszo_label = tk.Label(root, text="Jelszó", bg="grey", fg="yellow")
+jelszo_label = tk.Label(root, text="Jelszó", bg="#B59F81", fg="yellow")
 jelszo_label.place(relx=0.5,rely=0.20,  anchor=N)
-jelszo= Entry(root, width=50, bg="grey",fg="yellow", borderwidth=8,show="*")
+jelszo= Entry(root, width=50, bg="#B59F81",fg="yellow", borderwidth=8,show="*")
 jelszo.insert(0, "")
 jelszo.place(relx=0.5,rely=0.25,anchor=N)
 
@@ -50,7 +50,7 @@ def bejelentkezes():
          nemsiker_label.place(relx=0.5, rely=0.35, anchor=N)
 
 
-belepes = Button(root, text="Bejelentkezés", padx=10, pady=10, command=bejelentkezes, fg="yellow", bg="grey")
+belepes = Button(root, text="Bejelentkezés", padx=10, pady=10, command=bejelentkezes, fg="yellow", bg="#B59F81")
 belepes.place(relx=0.5, rely=0.44, anchor=N)
 kilépés = Button(root, text="Kilépés",padx=10,pady=10,fg="yellow",bg="red" ,command=root.destroy)
 kilépés.place(relx=0.5,rely=0.6, anchor=N)

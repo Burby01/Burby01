@@ -7,9 +7,9 @@ def fel():
     root = tk.Tk()
     root.title("Könyv Lista")
     root.geometry("500x500")
-    root.configure(bg="#964B00")
+    root.configure(bg="#9A7E6F")
 
-    elotte = tk.Label(root, text="Válassza ki a könyvet:", bg="grey", fg="yellow")
+    elotte = tk.Label(root, text="Válassza ki a könyvet:", bg="#B59F81", fg="yellow")
     elotte.pack(padx=10, pady=10)
 
     konyv_cimek = [konyv["cim"] for konyv in konyvek_adatok]
@@ -87,7 +87,7 @@ def fel():
     torles_button = tk.Button(root, text="Kikölcsönzött könyv visszaadása", command=torles, bg="grey", fg="yellow")
     torles_button.pack(padx=10, pady=10)
 
-    valaszt_label = tk.Label(root, text="Még nem választott ki könyvet , kérem válasszon ki.", justify=tk.LEFT, bg="grey", fg="#8B0000")
+    valaszt_label = tk.Label(root, text="Még nem választott ki könyvet , kérem válasszon ki.", justify=tk.LEFT, bg="#B59F81", fg="#8B0000")
     valaszt_label.pack(padx=10, pady=10)
 
     kilépés = tk.Button(root, text="Kilépés",padx=10,pady=10,fg="yellow",bg="red" ,command=root.destroy)
