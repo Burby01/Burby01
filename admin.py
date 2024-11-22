@@ -48,6 +48,6 @@ def ad():
     valaszt_label.pack(padx=10, pady=10)
 
     kilépés = tk.Button(root, text="Kilépés",padx=10,pady=10,fg="yellow",bg="red" ,command=root.destroy)
-    kilépés.place(relx=0.5,rely=0.6, anchor=N)
+    kilépés.pack(padx=10,pady=10)
 
     root.mainloop()
