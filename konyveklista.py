@@ -37,7 +37,7 @@ konyvek_adatok = [
     {"cim": "Fahrenheit 451", "szerzo": "Ray Bradbury", "megjelenes": 1953, "kiado": "Ballantine Books", "oldalszam": 158, "isbn": "978-1451673319"},
     {"cim": "A harcosok klubja", "szerzo": "Chuck Palahniuk", "megjelenes": 1996, "kiado": "W.W. Norton & Company", "oldalszam": 208, "isbn": "978-0393311746"},
     {"cim": "A bűnözés titkai", "szerzo": "John Grisham", "megjelenes": 1991, "kiado": "Doubleday", "oldalszam": 368, "isbn": "978-0385418889"},
-    {"cim": "A Lord of the Rings – Két torony", "szerzo": "J.R.R. Tolkien", "megjelenes": 1954, "kiado": "Allen & Unwin", "oldalszam": 352, "isbn": "978-0261102323"},
+    {"cim": "A Lord of the Rings - Két torony", "szerzo": "J.R.R. Tolkien", "megjelenes": 1954, "kiado": "Allen & Unwin", "oldalszam": 352, "isbn": "978-0261102323"},
     {"cim": "A sziget", "szerzo": "Albert Sánchez Piñol", "megjelenes": 2002, "kiado": "Duomo", "oldalszam": 592, "isbn": "978-8435069634"},
     {"cim": "A sötét torony: A pusztító", "szerzo": "Stephen King", "megjelenes": 2004, "kiado": "Scribner", "oldalszam": 352, "isbn": "978-0743235097"},
     {"cim": "A másik bolygó", "szerzo": "Ursula K. Le Guin", "megjelenes": 1972, "kiado": "HarperCollins", "oldalszam": 400, "isbn": "978-0060854255"},

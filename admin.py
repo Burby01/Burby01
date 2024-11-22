@@ -5,6 +5,7 @@ from konyveklista import konyvek_adatok
 root = tk.Tk()
 root.title("Könyv Lista")
 root.geometry("500x500")
+root.configure(bg="#964B00")
 
 elotte = tk.Label(root, text="Válassza ki a könyvet:")
 elotte.pack(padx=10, pady=10)
