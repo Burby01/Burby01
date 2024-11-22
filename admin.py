@@ -30,10 +30,10 @@ def konyv_info():
 
     valaszt_label.config(text=valaszt_text)
 
-adat_button = tk.Button(root, text="A könyv adatai", command=konyv_info)
+adat_button = tk.Button(root, text="A könyv adatai", command=konyv_info, bg="grey", fg="yellow")
 adat_button.pack(padx=10, pady=10)
     
-valaszt_label = tk.Label(root, text="Még nem választott ki könyvet , kérem válasszon ki.", justify=tk.LEFT)
+valaszt_label = tk.Label(root, text="Még nem választott ki könyvet , kérem válasszon ki.", justify=tk.LEFT, bg="grey", fg="yellow")
 valaszt_label.pack(padx=10, pady=10)
 
 root.mainloop()
