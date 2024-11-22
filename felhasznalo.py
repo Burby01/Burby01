@@ -7,7 +7,7 @@ root.title("Könyv Lista")
 root.geometry("500x500")
 root.configure(bg="#964B00")
 
-elotte = tk.Label(root, text="Válassza ki a könyvet:")
+elotte = tk.Label(root, text="Válassza ki a könyvet:", bg="grey", fg="yellow")
 elotte.pack(padx=10, pady=10)
 
 konyv_cimek = [konyv["cim"] for konyv in konyvek_adatok]
