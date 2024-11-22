@@ -3,7 +3,7 @@ from tkinter import ttk
 from konyveklista import konyvek_adatok
 
 def ad():
-    
+
     root = tk.Tk()
     root.title("Könyv Lista")
     root.geometry("500x500")
@@ -34,6 +34,15 @@ def ad():
 
     adat_button = tk.Button(root, text="A könyv adatai", command=konyv_info, bg="grey", fg="yellow")
     adat_button.pack(padx=10, pady=10)
+    
+    hozzadas_button = tk.Button(root, text="Könyv hozzáadás", command=konyv_info, bg="grey", fg="yellow")
+    hozzadas_button.pack(padx=10, pady=10)
+
+    modositas_button = tk.Button(root, text="A könyv modosítása", command=konyv_info, bg="grey", fg="yellow")
+    modositas_button.pack(padx=10, pady=10)
+
+    torles_button = tk.Button(root, text="A könyv törlése", command=konyv_info, bg="grey", fg="yellow")
+    torles_button.pack(padx=10, pady=10)
         
     valaszt_label = tk.Label(root, text="Még nem választott ki könyvet , kérem válasszon ki.", justify=tk.LEFT, bg="grey", fg="#8B0000")
     valaszt_label.pack(padx=10, pady=10)
