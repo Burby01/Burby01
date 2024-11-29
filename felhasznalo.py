@@ -79,16 +79,16 @@ def fel():
         else:
             valaszt_label.config(text="Még nincs kikölcsönzött könyv.")
 
-    adat_button = tk.Button(root, text="A könyv adatai", command=konyv_info, bg="grey", fg="yellow")
+    adat_button = tk.Button(root, text="A könyv adatai", command=konyv_info, bg="grey", fg="#4CCD99")
     adat_button.pack(padx=10, pady=10)
 
-    kolcsonzes_button = tk.Button(root, text="Kikölcsönzés", command=kolcsonzes, bg="grey", fg="yellow")
+    kolcsonzes_button = tk.Button(root, text="Kikölcsönzés", command=kolcsonzes, bg="grey", fg="#4CCD99")
     kolcsonzes_button.pack(padx=10, pady=10)
 
-    kolcsonzes_lekerese_button = tk.Button(root, text="Kikölcsönzött könyvek", command=kolcsonzes_lekerese, bg="grey", fg="yellow")
+    kolcsonzes_lekerese_button = tk.Button(root, text="Kikölcsönzött könyvek", command=kolcsonzes_lekerese, bg="grey", fg="#4CCD99")
     kolcsonzes_lekerese_button.pack(padx=10, pady=10)
 
-    torles_button = tk.Button(root, text="Kikölcsönzött könyv visszaadása", command=torles, bg="grey", fg="yellow")
+    torles_button = tk.Button(root, text="Kikölcsönzött könyv visszaadása", command=torles, bg="grey", fg="#4CCD99")
     torles_button.pack(padx=10, pady=10)
 
     valaszt_label = tk.Label(root, text="Még nem választott ki könyvet , kérem válasszon ki.", justify=tk.LEFT, bg="#B59F81", fg="#8B0000")
