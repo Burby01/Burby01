@@ -8,7 +8,7 @@ from admin import ad
  
 
 root=tk.Tk()
-root.title("Könyvár")
+root.title("Könyvtár")
 root.geometry("1000x600")
 root.minsize(width=600, height=500)
 root.configure(bg="#9A7E6F")

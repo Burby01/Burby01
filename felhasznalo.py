@@ -5,7 +5,7 @@ from konyveklista import konyvek_adatok
 def fel():
 
     root = tk.Tk()
-    root.title("Könyv Lista")
+    root.title("Felhasználó")
     root.geometry("500x500")
     root.configure(bg="#9A7E6F")
 
