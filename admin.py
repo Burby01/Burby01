@@ -84,6 +84,10 @@ def ad():
         else:
             valaszt_label.config(text="Nincs kiválasztott könyv.")
 
+    def modositas():
+        kivalasztott_cim = combo_box.get()
+        kivalasztott_konyv = next((konyv for konyv in konyvek_adatok if konyv["cim"] == kivalasztott_cim), None)
+
     adat_button = tk.Button(root, text="A könyv adatai", command=konyv_info, bg="grey", fg="#4CCD99")
     adat_button.pack(padx=10, pady=10)
 
@@ -92,6 +96,9 @@ def ad():
 
     torles_button = tk.Button(root, text="Könyv törlése", command=torles, bg="grey", fg="#4CCD99")
     torles_button.pack(padx=10, pady=10)
+
+    modositas_button = tk.Button(root, text="Könyv módosítása", command=modositas, bg="grey", fg="#4CCD99")
+    modositas_button.pack(padx=10, pady=10)
 
     valaszt_label = tk.Label(root, text="Még nem választott ki könyvet.", justify=tk.LEFT, bg="#B59F81", fg="#8B0000")
     valaszt_label.pack(padx=10, pady=10)
