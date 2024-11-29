@@ -2,7 +2,6 @@ import tkinter as tk
 from tkinter import ttk
 from konyveklista import konyvek_adatok
 
-
 def ad():
     root = tk.Tk()
     root.title("Admin")
@@ -56,26 +55,43 @@ def ad():
                     "oldalszam": int(adatok["Oldalszám:"]),
                     "isbn": adatok["ISBN:"]
                 }
-                konyvek_adatok.append(uj_konyv) 
-
+                konyvek_adatok.append(uj_konyv)
 
                 konyv_cimek.append(uj_konyv["cim"])
-                combo_box['values'] = konyv_cimek 
+                combo_box['values'] = konyv_cimek
 
                 for entry in entryk:
                     entry.delete(0, tk.END)
 
-            mentes_button = tk.Button(rogzites_container, text="Mentés", command=mentes, bg="green", fg="white")
+            mentes_button = tk.Button(rogzites_container, text="Rögzíés", command=mentes, bg="green", fg="white")
             mentes_button.grid(row=len(labelek), column=0, columnspan=2, pady=10)
 
             rogzites_container.pack(padx=10, pady=10)
             rogzites.is_created = True
+
+    def torles():
+        kivalasztott_cim = combo_box.get()
+        if kivalasztott_cim:
+            konyv_torles = next((konyv for konyv in konyvek_adatok if konyv["cim"] == kivalasztott_cim), None)
+            if konyv_torles:
+                konyvek_adatok.remove(konyv_torles)
+                konyv_cimek.remove(kivalasztott_cim)
+                combo_box['values'] = konyv_cimek 
+
+                valaszt_label.config(text=f"A '{kivalasztott_cim}' című könyv törölve lett.")
+            else:
+                valaszt_label.config(text="Ezt a könyvet már kitörölted.")
+        else:
+            valaszt_label.config(text="Nincs kiválasztott könyv.")
 
     adat_button = tk.Button(root, text="A könyv adatai", command=konyv_info, bg="grey", fg="#4CCD99")
     adat_button.pack(padx=10, pady=10)
 
     hozzadas_button = tk.Button(root, text="Könyv rögzítése", command=rogzites, bg="grey", fg="#4CCD99")
     hozzadas_button.pack(padx=10, pady=10)
+
+    torles_button = tk.Button(root, text="Könyv törlése", command=torles, bg="grey", fg="#4CCD99")
+    torles_button.pack(padx=10, pady=10)
 
     valaszt_label = tk.Label(root, text="Még nem választott ki könyvet.", justify=tk.LEFT, bg="#B59F81", fg="#8B0000")
     valaszt_label.pack(padx=10, pady=10)
