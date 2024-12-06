@@ -88,6 +88,43 @@ def ad():
         kivalasztott_cim = combo_box.get()
         kivalasztott_konyv = next((konyv for konyv in konyvek_adatok if konyv["cim"] == kivalasztott_cim), None)
 
+        if kivalasztott_konyv:
+            if not hasattr(modositas, 'is_created') or not modositas.is_created:
+                rogzites_container.pack(padx=10, pady=10)
+                labelek = ["Cím:", "Szerző:", "Megjelenés éve:", "Kiadó:", "Oldalszám:", "ISBN:"]
+                entryk = []
+
+                for i, (label_text, key) in enumerate(zip(labelek, kivalasztott_konyv.keys())):
+                    label = tk.Label(rogzites_container, text=label_text, bg="#B59F81", fg="yellow")
+                    label.grid(row=i, column=0, padx=5, pady=5, sticky=tk.W)
+                    entry = tk.Entry(rogzites_container, width=40, bg="#F5E6C8")
+                    entry.insert(0, str(kivalasztott_konyv[key])) 
+                    entry.grid(row=i, column=1, padx=5, pady=5)
+                    entryk.append(entry)
+
+                def ment_modositas():
+                    uj_adatok = {label: entry.get() for label, entry in zip(labelek, entryk)}
+
+                    kivalasztott_konyv["cim"] = uj_adatok["Cím:"]
+                    kivalasztott_konyv["szerzo"] = uj_adatok["Szerző:"]
+                    kivalasztott_konyv["megjelenes"] = int(uj_adatok["Megjelenés éve:"])
+                    kivalasztott_konyv["kiado"] = uj_adatok["Kiadó:"]
+                    kivalasztott_konyv["oldalszam"] = int(uj_adatok["Oldalszám:"])
+                    kivalasztott_konyv["isbn"] = uj_adatok["ISBN:"]
+
+                    combo_box['values'] = [k["cim"] for k in konyvek_adatok]
+
+                    valaszt_label.config(text=f"A '{kivalasztott_cim}' című könyv módosítva lett.")
+                    rogzites_container.pack_forget()
+                    modositas.is_created = False
+
+                ment_button = tk.Button(rogzites_container, text="Módosítás mentése", command=ment_modositas, bg="blue", fg="white")
+                ment_button.grid(row=len(labelek), column=0, columnspan=2, pady=10)
+
+                modositas.is_created = True
+        else:
+            valaszt_label.config(text="Válasszon ki egy könyvet a módosításhoz!")
+
     adat_button = tk.Button(root, text="A könyv adatai", command=konyv_info, bg="grey", fg="#4CCD99")
     adat_button.pack(padx=10, pady=10)
 
