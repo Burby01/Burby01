@@ -5,7 +5,7 @@ from konyveklista import konyvek_adatok
 def ad():
     root = tk.Tk()
     root.title("Admin")
-    root.geometry("1920x1080")
+    root.geometry("1000x600")
     root.configure(bg="#9A7E6F")
 
     elotte = tk.Label(root, text="Válassza ki a könyvet:", bg="#B59F81", fg="yellow")

@@ -6,7 +6,7 @@ def fel():
 
     root = tk.Tk()
     root.title("Felhasználó")
-    root.geometry("500x500")
+    root.geometry("1000x600")
     root.configure(bg="#9A7E6F")
 
     elotte = tk.Label(root, text="Válassza ki a könyvet:", bg="#B59F81", fg="yellow")
