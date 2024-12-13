@@ -63,7 +63,7 @@ def ad():
                 for entry in entryk:
                     entry.delete(0, tk.END)
 
-            mentes_button = tk.Button(rogzites_container, text="Rögzíés", command=mentes, bg="green", fg="white")
+            mentes_button = tk.Button(rogzites_container, text="Rögzítés", command=mentes, bg="green", fg="white")
             mentes_button.grid(row=len(labelek), column=0, columnspan=2, pady=10)
 
             rogzites_container.pack(padx=10, pady=10)
